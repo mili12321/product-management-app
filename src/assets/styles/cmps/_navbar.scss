@@ -1,0 +1,23 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    color: $clr2;
+    background: linear-gradient(to right, $clr5, $clr4);
+    padding: rem(15px) rem(30px);
+    box-sizing: border-box;
+    .links-wrapper {
+        >a,
+        >div {
+            margin-right: rem(20px);
+            &::before {
+                background-color: $clr2;
+            }
+        }
+    }
+    .logo {
+        font-family: $regular-font;
+    }
+}

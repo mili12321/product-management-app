@@ -1,0 +1,35 @@
+// Colors
+$clr1:#000000;
+$clr2:#FFFFFF;
+$clr3:#f9f5f6;
+$clr4:#ff98c5;
+$clr5:#fbc0c1;
+$clr6:#b8e4d2;
+$clr8:#d3d3d3;
+$clr9:#2f5fef;
+$clr10:#999999;
+$clr11:#222;
+$clr12:rgb(0, 162, 255);
+$clr13:rgba( 34, 34, 34, 0.8);
+$clr14: #007fff;
+$clr15: #AAA8B1;
+$clr16: #85838c;
+$error_clr: red;
+$green: #04AA6D;
+$error_background_clr: #fce4e4;
+// Breakpoints
+$mobile-breakpoint: 460px;
+$narrow-breakpoint: 720px;
+$tablet-breakpoint: 768px;
+$normal-breakpoint: 960px;
+$small-laptop-breakpoint: 1024px;
+// Fonts
+$regular-font: Segoe_UI_Regular;
+$light-font: Segoe_UI_Light;
+$regular-dancingScript-font: DancingScript_Regular;
+$bold-dancingScript-font: DancingScript_Bold;
+$light-font-gray-shadow: 0px 3.2px 7.2px rgba(0, 0, 0, 0.132),
+0px 0.6px 1.8px rgba(0, 0, 0, 0.108);
+$default-border-radius: 3px;
+$navbar-height: 51px;
+$breadcrumb-container-height: 50px;

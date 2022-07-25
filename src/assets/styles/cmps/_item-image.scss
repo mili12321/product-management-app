@@ -1,0 +1,13 @@
+.product-image-wrapper {
+    width: 27%;
+    margin-right: 7px;
+    overflow: hidden;
+    align-items: center;
+    img {
+        width: 60%;
+        margin: 0 auto;
+        &.default-image {
+            width: 100%;
+        }
+    }
+}

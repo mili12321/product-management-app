@@ -1,0 +1,51 @@
+::selection {
+    background-color: $clr12;
+    color: $clr2;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+    color: $clr1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: $light-font;
+    background: $clr3;
+    @include for-mobile-layout {
+        font-size: 14px;
+    }
+    * {
+        box-sizing: border-box;
+    }
+}
+
+*:focus {
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: rem(10px) auto;
+    align-self: center;
+    margin: 0 0 0.6em;
+    line-height: 1;
+}
+
+textarea {
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+    box-shadow: $light-font-gray-shadow;
+    border: 0;
+    border-radius: rem($default-border-radius);
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}

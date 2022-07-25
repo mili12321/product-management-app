@@ -1,0 +1,164 @@
+.split-up-text-animation {
+    overflow: hidden;
+    span {
+        display: inline-block;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        transition-timing-function: ease-out;
+        transform: translate3d(-30%, -100%, 0);
+    }
+    @for $i from 1 through 27 {
+        span:nth-child(#{$i}) {
+            animation-delay: $i * 0.01s;
+            animation-name: rampUp;
+        }
+    }
+}
+
+@keyframes rampUp {
+    0% {
+        transform: translate3d(-30%, 100%, -1);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animated-wrapper {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform .8s cubic-bezier(.175, .885, .32, 1.275), opacity .6s cubic-bezier(.215, .61, .355, 1), filter .4s cubic-bezier(.215, .61, .355, 1);
+    &.active {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.move-right-animation {
+    opacity: 0;
+    transform: translate3d(-600px, 0px, 0px);
+    transition: all 0.8s cubic-bezier(.215, .61, .355, 1);
+    &.active {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+    }
+}
+
+.animated-text-inside-div {
+    >* {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    &.active {
+        >* {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+    >li {
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                transition-delay: $i * 0.5s;
+            }
+        }
+    }
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    transition-delay: 0.2s;
+    &.active {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.rotateX-animation {
+    &.active {
+        >div {
+            transform: none;
+            opacity: 1;
+            &.delay-2 {
+                transition-delay: 0.2s;
+            }
+        }
+    }
+    >div {
+        transform: translateY(100%) rotateX(-80deg);
+        transition: .8s cubic-bezier(.215, .61, .355, 1);
+        opacity: 0;
+        transform-style: preserve-3d;
+        transform-origin: center top;
+        &.hide {
+            transition: 0s;
+        }
+    }
+}
+
+.slide-up-animation {
+    overflow: hidden;
+    animation-delay: 0;
+    @for $i from 2 through 3 {
+        &:nth-child(#{$i}) {
+            >div {
+                animation-delay: $i * 0.025s;
+            }
+        }
+        >div {
+            animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+        }
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.visibility-on-scroll-animation {
+    opacity: 0;
+    transform: translateY(0);
+    &.active {
+        animation: visibility 1.5s forwards, translate .7s forwards;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    &.active {
+        animation: visibility 1.5s forwards;
+    }
+}
+
+@keyframes visibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes translate {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}

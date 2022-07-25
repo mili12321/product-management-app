@@ -1,0 +1,22 @@
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    background-image: none;
+    &::-ms-expand {
+        display: none;
+      }
+    height: rem(30px);
+    border-radius: rem(5px);
+}

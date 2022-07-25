@@ -1,0 +1,14 @@
+.pagination-wrapper {
+    >div {
+        cursor: pointer;
+    }
+    .prev-page {
+        margin-right: 15px;
+    }
+    .page-number {
+        margin: 5px;
+    }
+    .next-page {
+        margin-left: 15px;
+    }
+}

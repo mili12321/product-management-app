@@ -1,0 +1,266 @@
+.btn-basic {
+    padding: rem(11px) rem(20px);
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.132), 0px 0.3px 0.9px rgba(0, 0, 0, 0.108);
+    border-radius: rem(2px);
+    border: 1px solid transparent;
+    font-family: $regular-font;
+    &::after {
+        @include arrow(right);
+    }
+    &:hover {
+        &::after {
+            @include arrow-hover(right);
+        }
+    }
+}
+
+.next-page {
+    font-family: $regular-font;
+    line-height: rem(21px);
+    cursor: pointer;
+    width: fit-content;
+    &::after {
+        @include arrow(right);
+    }
+    &:hover {
+        &::after {
+            @include arrow-hover(right);
+        }
+    }
+}
+
+.prev-page {
+    font-family: $regular-font;
+    line-height: rem(21px);
+    cursor: pointer;
+    width: fit-content;
+    &::before {
+        @include arrow(left);
+    }
+    &:hover {
+        &::before {
+            @include arrow-hover(left);
+        }
+    }
+}
+
+.outline-btn {
+    @extend .btn-basic;
+    border: 1px solid $clr8;
+}
+
+.fill-btn {
+    @extend .btn-basic;
+    background: $clr1;
+    color: $clr2;
+}
+
+.navigate-to-landing-page-btn {
+    @extend .outline-btn;
+    background-color: $clr2;
+    border: transparent;
+    transition: 0.2s ease;
+    &::after {
+        display: none;
+    }
+    &::before {
+        @include arrow(left);
+    }
+    &:hover {
+        &::before {
+            @include arrow-hover(left);
+        }
+        background-color: $clr1;
+        color: $clr2;
+    }
+}
+
+.main-btn {
+    background: $clr4;
+    color: $clr2;
+    border: 1px solid transparent;
+    box-shadow: $light-font-gray-shadow;
+    border-radius: rem($default-border-radius);
+    z-index: 7;
+    padding: rem(5px) rem(8px);
+    align-self: flex-end;
+    width: fit-content;
+    cursor: pointer;
+    &.fix-button {
+        position: sticky;
+        top: $navbar-height;
+    }
+    transition: 0.2s ease;
+    >img {
+        filter: invert(47%) sepia(36%) saturate(6391%) hue-rotate(166deg) brightness(102%) contrast(101%);
+    }
+    &:hover {
+        background-color: $clr2;
+        border: 1px solid $clr1;
+        color: $clr1;
+        .shopping-cart-btn {
+            >img {
+                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(103%) contrast(103%);
+            }
+            .products-count {
+                background-color: white;
+                color: $clr9;
+            }
+        }
+    }
+    >div {
+        &:first-child {
+            margin-left: rem(5px);
+            letter-spacing: rem(-0.5px);
+        }
+    }
+    .shopping-cart-btn {
+        padding: rem(5px);
+        color: white;
+        border-radius: rem(3px);
+        cursor: pointer;
+        width: rem(26px);
+        height: rem(26px);
+        position: relative;
+        justify-content: center;
+        place-items: center;
+        .products-count {
+            position: absolute;
+            padding: rem(2px);
+            border-radius: 50%;
+            width: rem(13px);
+            height: rem(13px);
+            line-height: rem(13px);
+            font-size: rem(12px);
+            background: $clr9;
+            top: rem(-2px);
+            right: rem(-6px);
+        }
+        >img {
+            width: rem(26px);
+        }
+    }
+}
+
+.page-number {
+    font-size: rem(14px);
+    cursor: pointer;
+    color: $clr1;
+    transition: 0.2s ease-in;
+    width: fit-content;
+    &:hover {
+        text-decoration: underline;
+    }
+    margin: auto;
+    margin-top: rem(8px);
+    >div {
+        margin-left: rem(5px);
+        &.forward {
+            position: relative;
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: rem(1px);
+                content: "";
+                background-color: $clr9;
+                transition: transform .3s cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform: scaleX(0);
+                transform-origin: right center;
+            }
+        }
+    }
+    &.forward {
+        &:hover {
+            text-decoration: none;
+            >div {
+                text-decoration: none;
+                &::before {
+                    transform: scaleX(1);
+                    transform-origin: left center;
+                }
+            }
+        }
+    }
+    &.no-img {
+        position: absolute;
+        bottom: rem(10px);
+    }
+    &.current-page {
+        color: $clr4;
+    }
+}
+
+.toggle-btn {
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    width: rem(50px);
+    height: rem(25px);
+    border-radius: rem(20px);
+    border: rem(2px) solid $clr4;
+    outline: none;
+    transition: 0.3s;
+    &::before {
+        content: "";
+        position: absolute;
+        height: rem(17px);
+        width: rem(17px);
+        border-radius: 50%;
+        background: $clr4;
+        top: rem(2px);
+        left: rem(2px);
+        transition: 0.3s ease-in-out;
+    }
+    &:checked::before {
+        transform: translateX(rem(25px));
+        background: $clr14;
+    }
+    &:checked {
+        border-color: $clr14;
+    }
+}
+
+.information-btn {
+    width: fit-content;
+    font-weight: normal;
+    font-size: rem(14px);
+    align-self: flex-end;
+    margin-left: rem(5px);
+    position: relative;
+    bottom: rem(6px);
+    left: rem(5px);
+    .info-icon {
+        border-radius: 50%;
+        color: $clr2;
+        background: $clr1;
+        width: rem(17px);
+        height: rem(17px);
+        line-height: rem(17px);
+        font-family: $regular-font;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.2s;
+        &::after {
+            width: 0;
+            white-space: nowrap;
+            height: fit-content;
+            visibility: hidden;
+        }
+        &:hover {
+            opacity: 1;
+            &::after {
+                visibility: visible;
+                width: fit-content;
+                left: rem(25px);
+                top: 50%;
+                transform: translateY(-50%);
+                height: fit-content;
+            }
+        }
+    }
+}

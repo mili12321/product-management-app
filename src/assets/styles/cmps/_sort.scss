@@ -1,0 +1,15 @@
+.sort-wrapper {
+    select {
+        flex: 1;
+        padding: 0.5em;
+        color: $clr4;
+        cursor: pointer;
+    }
+    .clear-sort-btn {
+        width: 20px;
+        >img {
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}

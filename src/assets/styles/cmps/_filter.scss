@@ -1,0 +1,30 @@
+.select-container {
+    margin-right: 15px;
+    position: relative;
+    display: flex;
+    width: rem(135px);
+    line-height: 3;
+    background: $clr2;
+    color: $clr3;
+    overflow: hidden;
+    border-radius: .25em;
+    height: 30px;
+    &::after {
+        content: '\25BC';
+        position: absolute;
+        top: -9px;
+        right: 0;
+        padding: 0 1em;
+        background: $clr2;
+        border-left: 2px solid $clr4;
+        cursor: pointer;
+        pointer-events: none;
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+        background: $clr4;
+    }
+    &:hover::after {
+        color: $clr5;
+    }
+}
